@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="dist/reset.css">
   <link rel="stylesheet" href="dist/reveal.css">
   <link rel="stylesheet" href="dist/presentation.css">
-  <link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="dist/theme/serif.css" id="theme">
 
   <!-- Theme used for syntax highlighted code -->
   <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -20,42 +20,178 @@
   <div class="reveal">
     <div class="slides">
       <section>
-        <img class="r-stretch" src="./examples/assets/blocks.png">
-        <span>BLOCKCHAIN</span>
-        <aside class="notes">
-          Shhh, these are your private notes 📝
-        </aside>
+        <section>
+          <img class="r-stretch" src="./examples/assets/blocks.png">
+          <span>BLOCKCHAIN</span>
+          <aside class="notes">
+            Today I will talk you a little bit about blockchain.
+            I'll tell you how it works and where it can be used.
+          </aside>
+        </section>
+        <section>
+          <img class="r-stack" src="./examples/assets/date.png" width="300">
+          <span>Creation history</span>
+          <aside class="notes">
+            This technique was originally described in
+            1991 by a group of researchers and was originally intended to timestamp digital documents so
+            that it’s not possible to backdate them or to tamper with them.
+          </aside>
+        </section>
+        <section>
+          <span>...2009</span>
+          <img class="r-stack" src="./examples/assets/bitcoin.png" width="300">
+          <span>Bitcoin by "Satoshi Nakamoto"</span>
+          <aside class="notes">
+            However this technology was unused until 2009, when Satoshi Nakamoto created the digital cryptocurrency
+            Bitcoin.
+          </aside>
+        </section>
+        <section>
+          <span>Blockchain === Bitcoin // <span class="false">false</span></span>
+          <aside class="notes">
+            Here we need to note, that Bitcoin is not a Blockchain. Blockchain is a technology, at same time as Bitcoin
+            is just an asset that works based on blockchain technology.
+          </aside>
+        </section>
       </section>
-      <section>
-        <p>What we will talking about:</p>
-        <div class="fragment-container">
-          <p class="fragment">1. What is Blockchain?</p>
-          <p class="fragment">1. History?</p>
-          <p class="fragment">2. Storage Structure</p>
-          <p class="fragment">3. Decentralization</p>
-          <p class="fragment">4. Transparency</p>
-          <p class="fragment">5. Is Blockchain Secure?</p>
-          <p class="fragment">6. Bitcoin vs. Blockchain</p>
-          <p class="fragment">7. Blockchain vs. Banks</p>
-          <p class="fragment">8. How is Blockchain Used?</p>
-          <p class="fragment">9. Advantages and Disadvantages of Blockchain</p>
-          <p class="fragment">10. Advantages of Blockchain</p>
-          <p class="fragment">11. Disadvantages of Blockchain</p>
-          <p class="fragment">12. What's Next for Blockchain?</p>
-        </div>
-      </section>
+
       <section>
         <section>
-          <!-- <span>History</span> -->
-          <!-- <pre> -->
-            <code data-trim data-noescape>
-            Blockchain !== Bitcoin // true
-            </code>
-          <!-- </pre> -->
+          <span>BLOCKCHAIN === DATABASE // <span class="true">true</span></span>
+          <aside class="notes">
+            Here I need to say that blockchain is just a type of database.
+            But, how does a blockchain differ from a database?
+            The answer is the way the data is structured.
+          </aside>
         </section>
-        <section>Slide 4</section>
-        <section>Slide 5</section>
+        <section>
+          <img class="r-stack" src="./examples/assets/table_db.png">
+          <span>Classic Database</span>
+          <aside class="notes">
+            In classic databases information is typically structured in table format that allows easy search and filter
+            specific information. If it is necessary we can easily change data inside such database.
+          </aside>
+        </section>
+        <section>
+          <img class="r-stack" src="./examples/assets/blocks.png">
+          <span>Blockchain</span>
+          <aside class="notes">
+            A blockchain collects information together in groups, also known as blocks, that hold sets of information.
+            Blocks when filled, are chained onto the previously filled block,
+            forming a chain of data known as the “blockchain.”
+
+            We can say that all blockchains are databases but not all databases are blockchains.
+
+            Blockchain have an interesting property: once some
+            data has been recorded inside a blockchain, it becomes very difficult to change it.
+          </aside>
+        </section>
       </section>
+
+      <section>
+        <section>
+          <img class="r-stack" src="./examples/assets/deeper.jpg" width="600">
+          <aside class="notes">
+            So, how it works? let’s take a closer look at a block.
+          </aside>
+        </section>
+        <section>
+          <img class="r-stack" src="./examples/assets/block.png" width="300">
+          <ol>
+            <li class="fragment">Data</li>
+            <li class="fragment">Hash</li>
+            <li class="fragment">Hash of the previous block</li>
+          </ol>
+          <aside class="notes">
+            Each block contains some data, the hash of
+            the block and the hash of the previous block. 
+            The data that is stored inside a block depends
+            on the type of blockchain.
+          </aside>
+        </section>
+        <section>
+          <span>DATA</span>
+          <img class="r-stack" src="./examples/assets/btc_data.png" width="600">
+          <aside class="notes">
+            The Bitcoin blockchain for example stores
+            the details about a transaction in here, such as the sender,
+            receiver and amount of coins.
+          </aside>
+        </section>
+        <section>
+          <div>HASH</div>
+          <span class="hash">929a4ad395f65ca80110818e5fa055f383203aeaa829525dfe9e0824cc459d6a</span>
+          <aside class="notes">
+            A block also has a hash.
+            You can compare a hash to a fingerprint. 
+            It identifies a block and all of its contents
+            and it's always unique, just as a fingerprint.
+            Once a block is created, 
+            hash-function collects all information in this block
+            as parameters and calculate block's hash.
+          </aside>
+        </section>
+        <section>
+          <div>Hash of the previous block</div>
+          <aside class="notes">
+            The third important element inside each block is 
+            the hash of the previous block. 
+            So each block links to the previous block. 
+            It is how chain of blocks is created.
+            Let's look on example.
+          </aside>
+        </section>
+        <section>
+          <img class="r-stack" src="./examples/assets/3blocks.png" width="600">
+          <aside class="notes">
+            As you can see,  each block has a hash
+            and the hash of the previous block. 
+            So block number 3 points to block number 2
+            and number 2 points to number 1. Now the first block is a bit special,  it cannot
+            point to previous blocks because it's the first one. It calls the genesis block.
+          </aside>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <div>DECENTRALIZATION</div>
+          <aside class="notes">
+            Blockchain have another important property: decentralization
+          </aside>
+        </section>
+        <section>
+          <div>Traditional system</div>
+          <img class="r-stack" src="./examples/assets/centralization.png" width="500">
+          <aside class="notes">
+            Traditional ledgers are centralized and use 3rd parties to approve and record transactions.
+            Here in the center of picture you can imagine Bank, that stores your money and transactions.
+            Or maybe medicine clinic, that stores your medical records
+            And so on... and so on...
+          </aside>
+        </section>
+        <section>
+          <div>Blockchain system</div>
+          <img class="r-stack" src="./examples/assets/decentralization.png" width="500">
+          <aside class="notes">
+            In a decentralized blockchain network, 
+            no one has to know or trust anyone else. 
+            Each member in the network has a copy of the exact same data 
+            in the form of a distributed ledger.
+          </aside>
+        </section>
+        <section>
+          <img class="r-stack" src="./examples/assets/consensys.png" width="500">
+          <aside class="notes">
+            All the nodes in this network create consensus.
+            They agree about what blocks are valid and
+            which aren't. Blocks that are tampered will be rejected
+            by other nodes in the network.
+            So this makes blockhain is so secure.
+          </aside>
+        </section>
+      </section>
+
       <section>History</section>
       <section>Slide 7</section>
       <section>Slide 8</section>
@@ -76,6 +212,7 @@
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
+      margin: 0,
 
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
